@@ -89,7 +89,11 @@ WSGI_APPLICATION = 'family_store.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'db_maytredan',
+        'USER': 'db_maytredan_user',
+        'PASSWORD': 'db_maytredan_password',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
