@@ -26,7 +26,7 @@ class Item(models.Model):
     def __str__(self):
         return self.title
 
-    def get_obsolute_url(self):
+    def get_absolute_url(self):
         return reverse("store:product", kwargs={
             'slug': self.slug
         })
@@ -48,3 +48,4 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user.username
+
