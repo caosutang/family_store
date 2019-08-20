@@ -226,7 +226,7 @@
               <!--Card image-->
               <div class="view overlay">
                 <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top">
-                <a href="{{ item.get_absolute_url }}" 
+                <a href="{{ item.get_absolute_url }}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
@@ -272,6 +272,7 @@
       <!--Section: Products v.3-->
 
       <!--Pagination-->
+      {% if is_paginated %}
       <nav class="d-flex justify-content-center wow fadeIn">
         <ul class="pagination pg-blue">
 
@@ -299,6 +300,7 @@
           </li>
         </ul>
       </nav>
+      {% endif %}
       <!--Pagination-->
 
     </div>
