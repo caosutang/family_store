@@ -7,6 +7,6 @@ djangorestframework
 django-allauth
 Pillow
 pipdeptree
-psycopg2
+psycopg2-binary
 django-import-export
 django-crispy-forms
