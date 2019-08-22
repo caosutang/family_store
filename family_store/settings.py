@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'store.apps.StoreConfig',
 
+    'crispy_forms',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -78,7 +80,10 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
 SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'family_store.wsgi.application'
 
@@ -129,6 +134,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Static files (CSS, JavaScript, Images)

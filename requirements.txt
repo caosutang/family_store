@@ -9,3 +9,4 @@ Pillow
 pipdeptree
 psycopg2
 django-import-export
+django-crispy-forms
