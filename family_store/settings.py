@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
 
     'crispy_forms',
+    'django_countries',
 
     'allauth',
     'allauth.account',
@@ -137,6 +138,7 @@ USE_TZ = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+STRIPE_SECRET_KEY = 'sk_test_VlNCSMxftBdSAqXpQgcAQqEO00qeaj5CBC'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
