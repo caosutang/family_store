@@ -121,16 +121,24 @@ label {
 
           <!--Card-->
           <div class="card">
-              {% comment %}<form method="POST" class="card-body">
-                  {% csrf_token %}
-                  {{ form|crispy }}
-                  <button class="btn btn-primary" type="submit">Submit</button>
-              </form>{% endcomment %}
 
           <script src="https://js.stripe.com/v3/"></script>
 
-          <form action="." method="post" id="stripe-form">
+          {% if card %}
+            <div style="padding: 5px 30px;">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="save" id="use_default_card">
+                    <label class="custom-control-label" for="use_default_card"> Use default card: **** **** **** {{ card.last4 }} </label>
+                    <span> Exp: {{ card.exp_month }}/{{ card.exp_year }}</span>
+                </div>
+            </div>
+          {% endif %}
+
+          <div class="current-card-form">
+
+            <form action="." method="post" id="stripe-form">
               {% csrf_token %}
+            <input type="hidden" name="use_default" value="true">
             <div class="stripe-form-row">
               <label for="card-element" id="stripeBtnLabel">
                 Credit or debit card
@@ -143,6 +151,9 @@ label {
 
             <button id="stripeBtn">Submit Payment</button>
           </form>
+
+          </div>
+
 
           </div>
           <!--/.Card-->
@@ -232,6 +243,20 @@ label {
     // Submit the form
     form.submit();
   }
+
+    var currentCardForm = $('.current-card-form');
+    var newCardForm = $('.new-card-form');
+    var use_default_card = document.querySelector("input[name=save]");
+    use_default_card.addEventListener('change', function(){
+        if (this.checked){
+            newCardForm.hide();
+            currentCardForm.show();
+        } else {
+            newCardForm.show();
+            currentCardForm.hide();
+        }
+    })
+
 
 </script>
 
